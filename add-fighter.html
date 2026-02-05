@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Join Fighter Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #e60000;
+}
+
+/* HAMBURGER */
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background: #333;
+    margin: 4px 0;
+    border-radius: 3px;
+}
+
+/* MENU */
+.nav {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #fff;
+    width: 220px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.nav a {
+    padding: 14px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+#menu-toggle:checked ~ .nav {
+    display: flex;
+}
+
+/* MAIN */
+.main-layout {
+    padding: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.center-news {
+    background: #fff;
+    padding: 25px;
+    border-radius: 6px;
+}
+
+/* FORM STEPS */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+/* FOOTER */
+.footer {
+    background: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+   
+<div class="logo"><a style="text-decoration: none;" href="index.html">🩸 Join Fighter </a></div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <nav class="nav">
+        <a href="add-fighter.html">Add Fighter</a>
+        <a href="#">Trending</a>
+    </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<section class="main-layout">
+<main class="center-news">
+
+<h3 class="mb-4">Add Fighter </h3>
+
+<form>
+
+<!-- STEP 1 -->
+<div class="form-step active">
+    <h5 class="mb-3"></h5>
+
+    <div class="row g-2">
+        <div class="col-md-6">
+            <label class="form-label">Fighter Name</label>
+            <input type="text" class="form-control form-control-sm">
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Upload Photo / Video</label>
+            <input type="file" class="form-control form-control-sm">
+        </div>
+    </div>
+
+    <div class="mt-2">
+        <label class="form-label">Fighter Story</label>
+        <textarea class="form-control form-control-sm" rows="3"></textarea>
+    </div>
+
+    <div class="text-end mt-3">
+        <button type="button" class="btn btn-primary btn-sm next-btn">Next</button>
+    </div>
+</div>
+
+<!-- STEP 2 -->
+<div class="form-step">
+    <h5 class="mb-3"></h5>
+
+    <div class="row g-2">
+        <div class="col-md-6">
+            <label class="form-label">Blood Group</label>
+            <select class="form-control form-control-sm">
+                <option>Select</option>
+                <option>A+</option><option>A-</option>
+                <option>B+</option><option>B-</option>
+                <option>O+</option><option>O-</option>
+                <option>AB+</option><option>AB-</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">All Blood Groups Accepted?</label>
+            <div class="mt-1">
+                <input type="radio" name="allblood"> Yes
+                <input type="radio" name="allblood" class="ms-3"> No
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between mt-3">
+        <button type="button" class="btn btn-secondary btn-sm prev-btn">Previous</button>
+        <button type="button" class="btn btn-primary btn-sm next-btn">Next</button>
+    </div>
+</div>
+
+<!-- STEP 3 -->
+<div class="form-step">
+    <h5 class="mb-3"></h5>
+
+    <div class="row g-2">
+        <div class="col-md-4">
+            <label class="form-label">State</label>
+            <select class="form-control form-control-sm">
+                <option>Delhi</option>
+                <option>Haryana</option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">City</label>
+            <select class="form-control form-control-sm">
+                <option>Faridabad</option>
+                <option>Palwal</option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">PIN Code</label>
+            <input type="text" class="form-control form-control-sm">
+        </div>
+    </div>
+
+    <div class="mt-2">
+        <label class="form-label">Medical Documents</label>
+        <input type="file" class="form-control form-control-sm" multiple>
+    </div>
+
+    <div class="d-flex justify-content-between mt-3">
+        <button type="button" class="btn btn-secondary btn-sm prev-btn">Previous</button>
+        <button type="submit" class="btn btn-success btn-sm">Submit</button>
+    </div>
+</div>
+
+</form>
+
+</main>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    © 2026 AddFighter | Privacy | Contact
+</footer>
+
+<!-- JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // MENU CLOSE ON CLICK
+    const menuToggle = document.getElementById("menu-toggle");
+    document.querySelectorAll(".nav a").forEach(link => {
+        link.addEventListener("click", () => menuToggle.checked = false);
+    });
+
+    // FORM STEPS
+    const steps = document.querySelectorAll(".form-step");
+    let current = 0;
+
+    function showStep(index) {
+        steps.forEach(step => step.classList.remove("active"));
+        steps[index].classList.add("active");
+    }
+
+    document.querySelectorAll(".next-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            if (current < steps.length - 1) {
+                current++;
+                showStep(current);
+            }
+        });
+    });
+
+    document.querySelectorAll(".prev-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            if (current > 0) {
+                current--;
+                showStep(current);
+            }
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>
